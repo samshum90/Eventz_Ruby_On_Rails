@@ -1,0 +1,17 @@
+<section class="event">
+  <% @events.each do |event| %>
+    <div class="summary">
+      <h2>
+        <%= link_to event.name, event %>
+      </h2>
+      <h3><%= day_and_time(event) %></h3>
+      in <%= event.location %>
+      <span class="price">
+        <%= price(event) %>
+      </span>
+      <p>
+        <%= truncate(event.description, length: 35, separator: ' ' ) %>
+      </p>
+    </div>
+  <% end %>
+  <section>
