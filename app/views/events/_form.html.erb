@@ -1,5 +1,5 @@
 <%= form_with(model: event, local: true) do |f| %>
-  <%# <%= event.errors.full_messages.to_sentence%> %>
+  <%# <%= event.errors.full_messages.to_sentence%>
   <%= render "shared/errors", object: event %>
   <%= f.label :name %>
   <%= f.text_field :name, autofocus: true%>
@@ -15,5 +15,8 @@
   <%= f.number_field :capacity %>
   <%= f.label :image_file_name %>
   <%= f.text_field :image_file_name %>
+  <div class="checkboxes">
+    <%= f.collection_check_boxes(:category_ids, Category.all, :id, :name) %>
+  </div>
   <%= f.submit %>
 <% end %>
