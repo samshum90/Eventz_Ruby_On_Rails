@@ -5,7 +5,7 @@
     </div>
     <div class="summary">
       <h2>
-        <%= link_to event.name, event %>
+        <%= link_to event.name, event_path(event) %>
       </h2>
       <h3><%= day_and_time(event) %></h3>
       in <%= event.location %>
